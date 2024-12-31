@@ -1,14 +1,14 @@
-# Phishing Email Detection 
+# Phishing Email Detection Project
 
-This project processes email content, applies a trained **Naive Bayes classifier**, and provides real-time predictions via a user-friendly web interface.
+A data science project aimed at classifying emails as **Spam** or **Ham** (not spam) using machine learning techniques. This project processes email content, applies a trained **Naive Bayes classifier**, and evaluates its performance.
 
 ---
 
 ## Features
 - **Preprocessing**: Text cleaning using tokenization, stopword removal, and lemmatization.
 - **Model**: Multinomial Naive Bayes trained on TF-IDF features for robust text classification.
+- **Evaluation**: Metrics like accuracy, precision, recall, and F1-score to assess model performance.
 - **Visualization**: Includes WordClouds to show common spam/ham words.
-- **Scalable Deployment**: Can be deployed on Heroku, Streamlit Cloud, or AWS.
 
 ---
 
@@ -34,19 +34,10 @@ This project processes email content, applies a trained **Naive Bayes classifier
    >>> exit()
    ```
 
-4. Run the application:
-   - For Flask:
-     ```bash
-     python app.py
-     ```
-   - For Streamlit:
-     ```bash
-     streamlit run app.py
-     ```
-
-5. Access the app:
-   - Flask: Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
-   - Streamlit: The URL will be displayed in the terminal.
+4. Run the script:
+   ```bash
+   python phishing_email_detection.py
+   ```
 
 ---
 
@@ -61,11 +52,11 @@ This project processes email content, applies a trained **Naive Bayes classifier
 2. **Feature Extraction**:
    - Text is transformed into numerical features using TF-IDF vectorization.
 
-3. **Prediction**:
+3. **Model Training**:
    - A trained Multinomial Naive Bayes model predicts whether the email is Spam or Ham.
 
-4. **Interactive Output**:
-   - Displays results immediately after user input.
+4. **Evaluation**:
+   - Confusion matrix and classification report provide detailed performance metrics.
 
 ---
 
@@ -73,14 +64,11 @@ This project processes email content, applies a trained **Naive Bayes classifier
 
 ```
 .
-├── app.py                 # Main Flask/Streamlit application file
-├── phishing_model.pkl     # Trained Naive Bayes model
-├── tfidf_vectorizer.pkl   # Trained TF-IDF vectorizer
-├── templates/             # HTML templates (for Flask)
-│   └── index.html
-├── static/                # Static assets (e.g., CSS, JS)
-├── requirements.txt       # Python dependencies
-├── README.md              # Project documentation
+├── phishing_email_detection.py  # Main script for data processing and model training
+├── phishing_model.pkl           # Trained Naive Bayes model
+├── tfidf_vectorizer.pkl         # Trained TF-IDF vectorizer
+├── requirements.txt             # Python dependencies
+├── README.md                    # Project documentation
 ```
 
 ---
@@ -102,34 +90,10 @@ This project processes email content, applies a trained **Naive Bayes classifier
 
 ---
 
-## Deployment
-
-### Local Deployment
-Run the application locally using Flask or Streamlit as described in the **Installation** section.
-
-### Cloud Deployment
-1. **Heroku**:
-   - Install Heroku CLI: [https://devcenter.heroku.com/articles/heroku-cli](https://devcenter.heroku.com/articles/heroku-cli)
-   - Deploy using the following commands:
-     ```bash
-     heroku login
-     git init
-     heroku create
-     git add .
-     git commit -m "Initial commit"
-     git push heroku master
-     ```
-
-2. **Streamlit Cloud**:
-   - Deploy directly from your repository to [Streamlit Cloud](https://streamlit.io/).
-
----
-
 ## Future Enhancements
-- Add support for file uploads (e.g., `.csv` or `.txt` for bulk predictions).
-- Implement a deep learning model (e.g., LSTM or GRU) for improved accuracy.
-- Enhance the frontend with more interactive visualizations.
-- Integrate with an email client for real-time phishing detection.
+- Add support for visualizing model performance over time.
+- Experiment with deep learning models (e.g., LSTM or GRU).
+- Enhance preprocessing to handle more nuanced cases like typos or slang.
 
 ---
 
